@@ -1,14 +1,45 @@
-/* package codechef; // don't place package name! */
+import java.util.Scanner;
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-/* Name of the class has to be "Main" only if the class is public. */
+public class Solution{
+    public static void main(String [] args)
+        {
+            Scanner scnr=new Scanner(System.in);
+            int n=scnr.nextInt();
+            int a[]=new int[n];
+            for(int i=0;i<n;i++)
+            {
+                a[i]=scnr.nextInt();
+            }
+            int path=-1;
+            int ans = 0;
 
-public abstract class Solution {
-
-    public static void main(String[] args) { int[] array = {1, 2, 3, 4};
-
+            int j;
+            for(int i=0;i<n;i++)
+            {   j=i;
+                int count=0;
+                while(true)
+                {
+                    count++;
+                    ans += a[j];
+                    if(a[j]==-1)
+                    {
+                        break;
+                    }
+                    else if(i==a[j])
+                    {
+                        if(count>path)
+                            path=count;
+                        break;
+                    }
+                    else
+                    {   int temp=j;
+                        j=a[j];
+                        a[temp]=-1;
+                    }
+                }
+            }
+            System.out.println("my path: "+path);
+            System.out.println(ans);
         }
+    }
 
-}

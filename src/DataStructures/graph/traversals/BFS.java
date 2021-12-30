@@ -1,6 +1,6 @@
 package DataStructures.graph.traversals;
 
-import DataStructures.graph.representation.GraphRepresentationUsingList;
+import DataStructures.graph.representation.UDGraphList;
 
 import java.util.*;
 
@@ -32,7 +32,7 @@ public class BFS {
         System.out.println("Enter no. of vertex , edges");
         int v = s.nextInt();
         int e = s.nextInt();
-       List<List<Integer>> adj = GraphRepresentationUsingList.createAdj(v,e);
+       List<List<Integer>> adj = UDGraphList.createAdj(v,e);
        bfsTraversal(adj,v);
     }
 }
